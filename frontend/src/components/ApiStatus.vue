@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import  axios from "axios"
+    import  axios from "axios";
 
     export default {
         name: "ApiStatus",
@@ -20,7 +20,6 @@
         },
         mounted(){
             axios.get('/api').then(response => {
-                console.dir(response);
                 this.name = response.data.name;
                 this.version = response.data.version;
             })

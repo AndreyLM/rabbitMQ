@@ -30,30 +30,25 @@
 </script>
 
 <style lang="scss">
-  $card-spacer-x : 40px;
 
-  @import "~bootstrap/scss/bootstrap";
+  @import "assets/scss/variables";
+  @import "~bootstrap/scss/bootstrap.scss";
   @import "~bootstrap-vue/dist/bootstrap-vue.css";
-  @import "~font-awesome/css/font-awesome.css";
+  @import "~@fortawesome/fontawesome-free/css/all.css";
 
   body {
     min-height: 100vh;
   }
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+
+  #app {
+    min-height: 100hv;
+    display: flex;
+    flex-direction: column;
   }
-}
+
+  .app-content {
+    flex: 1;
+    padding: 1rem 0;
+  }
+  
 </style>

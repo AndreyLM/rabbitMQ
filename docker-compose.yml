@@ -1,5 +1,6 @@
   version: '3'
   services:
+    
     frontend-nginx:
       build:
         context: ./frontend/docker
@@ -7,7 +8,7 @@
       volumes:
       - ./frontend:/var/www/frontend
       ports:
-      - "8080:80"
+      - "9000:80"
 
     frontend-nodejs:
       image: node:10.11-jessie
@@ -25,7 +26,7 @@
       depends_on:
       - api-php-fpm
       ports:
-      - "8081:80"
+      - "9001:80"
 
     api-php-fpm:
       build:
@@ -33,3 +34,12 @@
         dockerfile: php-fpm.docker
       volumes:
       - ./api:/var/www/api
+    
+    api-php-cli:
+      build:
+        context: ./api/docker
+        dockerfile: php-cli.docker
+      volumes:
+        - ./api:/var/www/api
+      working_dir: /var/www/api
+      tty: true

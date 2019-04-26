@@ -1,19 +1,21 @@
 <template>
     <div class="row">
         <div class="col-md-6">
-            <div class="card-header">
-                Login
-            </div>
-            <div class="card-body">
-                <b-form @submit="signup">
-                    <b-form-group label="Email address" label-for="signupEmail">
-                        <b-form-input id="signupEmail" type="email" v-model="form.email" required></b-form-input>
-                    </b-form-group>
-                    <b-form-group label="Password" label-for="signupPassword">
-                        <b-form-input id="signupPassword" type="password" v-model="form.password" required></b-form-input>
-                    </b-form-group>
-                    <b-button type="submit" variant="primary">Login</b-button>
-                </b-form>
+            <div class="card">
+                <div class="card-header">
+                    Login
+                </div>
+                <div class="card-body">
+                    <b-form @submit="signup">
+                        <b-form-group label="Email address" label-for="signupEmail">
+                            <b-form-input id="signupEmail" type="email" v-model="form.email" required></b-form-input>
+                        </b-form-group>
+                        <b-form-group label="Password" label-for="signupPassword">
+                            <b-form-input id="signupPassword" type="password" v-model="form.password" required></b-form-input>
+                        </b-form-group>
+                        <b-button type="submit" variant="primary">Login</b-button>
+                    </b-form>
+                </div>
             </div>
         </div>
     </div>

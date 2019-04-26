@@ -1,9 +1,15 @@
 <?php declare( strict_types = 1 );
 
-header('Content-Type: application/json');
+use Api\Http\Action;
 
-echo json_encode([
-   'name'  => 'App Api',
-    'version' => '1.0',
-]);
+chdir(dirname(__DIR__));
+require 'vendor/autoload.php';
+
+$config = require 'config/config.php';
+// $container = new \Slim\Container($config);
+$app = new \Slim\App($config);
+
+$app->get('/',  Action\HomeAction::class);
+
+$app->run();
 
